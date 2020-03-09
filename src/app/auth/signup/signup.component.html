@@ -1,0 +1,33 @@
+<div class="card-container">   
+    <mat-card class="example-card">
+        <form class="example-form" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <h2>Register form</h2>
+
+ 
+                <mat-form-field class="example-full-width">
+                    <mat-label>Name</mat-label>
+                    <input matInput type="text" formControlName="name" placeholder="Name">
+                </mat-form-field>
+                <div *ngIf="signupForm.controls['name'].errors && signupForm.controls['name'].touched" class="error-msg">
+                    <div [hidden]="!signupForm.controls['name'].errors.required">Name is required.</div>
+                </div>
+  
+                <mat-form-field class="example-full-width">
+                    <mat-label>Email</mat-label>
+                    <input matInput type="text" formControlName="email" placeholder="Login email">
+                </mat-form-field>
+                <div *ngIf="signupForm.controls['email'].errors && signupForm.controls['email'].touched" class="error-msg">
+                    <div [hidden]="!signupForm.controls['email'].errors.required">Email is required.</div>
+                </div>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" formControlName="pass" placeholder="Password">
+                </mat-form-field>
+                <div *ngIf="signupForm.controls['pass'].errors && signupForm.controls['pass'].touched" class="error-msg">
+                    <div [hidden]="!signupForm.controls['pass'].errors.required">Password is required.</div>
+                </div>
+            <button mat-flat-button color="primary" type="submit">Register</button>
+        </form>
+    </mat-card>
+</div> 

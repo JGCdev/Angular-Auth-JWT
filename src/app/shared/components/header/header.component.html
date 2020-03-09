@@ -2,7 +2,9 @@
     <mat-toolbar-row>
       <span>Users CRUD API</span>
       <span class="example-spacer"></span>
-      <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">favorite</mat-icon>
-      <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">delete</mat-icon>
+      <button mat-flat-button color="accent" *ngIf="!authService.isLoggedIn" [routerLink]="['/auth/sign-in']" routerLinkActive="router-link-active"  type="submit" class="btn-menu">Login</button>
+      <button mat-flat-button color="accent" *ngIf="!authService.isLoggedIn" [routerLink]="['/auth/sign-up']" type="submit" class="btn-menu">Register</button>
+      <button mat-flat-button color="warm" *ngIf="authService.isLoggedIn" (click)="logout()" type="submit" class="btn-menu">Logout</button>
+      
     </mat-toolbar-row>
 </mat-toolbar>
