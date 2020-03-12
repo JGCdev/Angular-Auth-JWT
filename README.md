@@ -5,7 +5,7 @@ Angular 8 JWT User Authentication CRUD using lazy loading and Material theme
 ## Start the Node Server
 * Run `npm install` to install required packages
 
-## Authentication REST APIs
+## API 
 * GET (users list)	      **/api**
 * POST (sign-in)	      **/api/signin**
 * POST (sign-up)	      **/api/register-user**
